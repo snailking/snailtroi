@@ -1,4 +1,4 @@
-var contractAddress="0x891EB4De45BB4f8e06FcEf9662DA4E7EaAcA569D"; //Mainnet
+var contractAddress=""; //Mainnet
 
 //-- WEB3 DETECTION --//
 var web3;
