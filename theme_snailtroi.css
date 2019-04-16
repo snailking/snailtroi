@@ -2,11 +2,12 @@
 #333333
 #666666
 #999999
+#7eb3d3
 */
 
 /* Body goes first */
 body {
-	background-image: url("img/retro_bg_1.png");
+	background-image: url("img/forest1.jpg");
 	background-color: #999999;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -26,7 +27,7 @@ body:before {
   width: 100%;
   height: 100%;
   z-index: -10;
-  background: url("img/retro_bg_1.png") no-repeat center center;
+  background: url("img/forest1.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -37,7 +38,7 @@ body:before {
 /* white text for links */
 
 a {
-	color: #ffffff;
+	color: #7eb3d3;
 }
 
 /* Info container */
@@ -98,13 +99,17 @@ a {
   -ms-filter: brightness(80%);
 }
 
-.img-dark {
-	height: 48px;
-	filter: brightness(60%);
-  -webkit-filter: brightness(60%);
-  -moz-filter: brightness(60%);
-  -o-filter: brightness(60%);
-  -ms-filter: brightness(60%);
+.t_link{
+	color: #7eb3d3;
+	cursor: pointer;
+}
+
+.t_link:hover{
+	filter: brightness(80%);
+  -webkit-filter: brightness(80%);
+  -moz-filter: brightness(80%);
+  -o-filter: brightness(80%);
+  -ms-filter: brightness(80%);
 }
 
 /* SnailThrone background */
@@ -277,10 +282,11 @@ p {
 
 /* Modal (from W3Schools) */
 .modal {
+	color: black;
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 200px; /* Location of the box */
+    padding-bottom: 1px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -320,6 +326,12 @@ p {
 /* Pulse on hover */
 
 .pulseperma{
+	cursor: pointer;
+	-webkit-animation: pulsate-fwd 2s ease-in-out infinite both;
+	        animation: pulsate-fwd 2s ease-in-out infinite both;
+}
+
+.pulsepermafast{
 	cursor: pointer;
 	-webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
 	        animation: pulsate-fwd 1s ease-in-out infinite both;
@@ -566,5 +578,46 @@ p {
   }
 }
 
+/* Tooltip while hovering kings */
 
+.king-box {
+  position: relative;
+}
 
+.king-image {
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.king-middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.king-box:hover .king-image {
+  opacity: 0.5;
+}
+
+.king-box:hover .king-middle {
+  opacity: 1;
+}
+
+.king-text {
+  color: white;
+	padding: 8px;
+    font-size: 40px;
+}
+
+/* Helpboxes */
+
+.hidden-first {
+	display: none;
+}

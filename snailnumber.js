@@ -573,7 +573,7 @@ function runLog(){
 							startBlock = result[i].blockNumber; //store the last blocknumber to start next loop
 							dateLog(result[i].blockNumber);
 							if(result[i].event == "GameBid"){
-								eventlogdoc.innerHTML += "<br>[~" + datetext + "] " + formatEthAdr(result[i].args.player) + " bid " + formatEthValue(web3.fromWei(result[i].args.eth,'ether')) + " ETH and choose the number " + result[i].args.number + ". They stand to win " + formatEthValue(web3.fromWei(result[i].args.pot,'ether') * result[i].args.winnerShare / 100) + " ETH.";								
+								eventlogdoc.innerHTML += "<br>[~" + datetext + "] " + formatEthAdr(result[i].args.player) + " bid " + formatEthValue(web3.fromWei(result[i].args.eth,'ether')) + " ETH and chose the number " + result[i].args.number + ". They stand to win " + formatEthValue(web3.fromWei(result[i].args.pot,'ether') * result[i].args.winnerShare / 100) + " ETH.";								
 							} else if(result[i].event == "GameEnd"){
 								eventlogdoc.innerHTML += "<br>[~" + datetext + "] " + formatEthAdr(result[i].args.player) + " wins " + formatEthValue(web3.fromWei(result[i].args.leaderReward,'ether')) + " ETH! " + formatEthValue(web3.fromWei(result[i].args.throneReward,'ether')) + " ETH goes to the SnailThrone. MAGIC NUMBER = " + result[i].args.number;		
 							} 
@@ -599,7 +599,7 @@ gamebidEvent.watch(function(error, result){
 		////////////////////console.log(result);
 		if(checkHash(result.transactionHash, result.event) != 0) {
 			date24();
-			eventlogdoc.innerHTML += "<br>[~" + datetext + "] " + formatEthAdr(result.args.player) + " bid " + formatEthValue(web3.fromWei(result.args.eth,'ether')) + " ETH and choose the number " + result.args.number + ". They stand to win " + formatEthValue(web3.fromWei(result.args.pot,'ether') * result.args.winnerShare / 100) + " ETH.";	
+			eventlogdoc.innerHTML += "<br>[~" + datetext + "] " + formatEthAdr(result.args.player) + " bid " + formatEthValue(web3.fromWei(result.args.eth,'ether')) + " ETH and chose the number " + result.args.number + ". They stand to win " + formatEthValue(web3.fromWei(result.args.pot,'ether') * result.args.winnerShare / 100) + " ETH.";	
 			logboxscroll.scrollTop = logboxscroll.scrollHeight;
 		}
 	}
